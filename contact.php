@@ -13,106 +13,155 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product.php">Products</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.php">Account</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="product.php">Products</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="login.php">Account</a></li>
+                <li><a href="admin-login.php">Admin</a></li>                    
                 </ul>
             </nav>
-            <img src="img/bag.png" width="30px" height="30px">
         </div>
 </body>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Furniture Order</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Furniture Order</title>
+  <style>
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d1b2a; /* Dark blue background */
+  margin: 0;
+  padding: 0;
+  color: #ffffff; /* White text color */
+}
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
+/* Header */
+header {
+  background-color: #1c2e4a; /* Slightly lighter blue for header */
+  padding: 1em;
+  text-align: center;
+}
 
-        main {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+/* Main Content */
+main {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1c2e4a; /* Same blue as header */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px; /* Rounded corners */
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-        label {
-            margin-bottom: 8px;
-        }
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
 
-        input, textarea {
-            padding: 10px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+label {
+  margin-bottom: 8px;
+}
 
-        button {
-            background-color: #333;
-            color: #fff;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+input,
+textarea {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #415a77; /* Lighter blue for input fields */
+  color: #ffffff; /* White text color */
+}
 
-        button:hover {
-            background-color: #555;
-        }
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle white glow on focus */
+}
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+button {
+  background-color: #007bff; /* Vibrant blue for button */
+  color: #ffffff; /* White text color */
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #1c2e4a; /* Same blue as header */
+  color: #ffffff; /* White text color */
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Success Message */
+#success-message {
+  color: #28a745; /* Green success color */
+  font-weight: bold;
+  margin-bottom: 16px;
+  display: none;
+}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
-    </header>
-    <main>
-        <form action="mailto:hjxsigma@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+  <main>
+    <div id="success-message">Message sent successfully!</div>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+  <footer>
+    <p>Contact us: +44 7444 506 707 | hjxsigma@gmail.com</p>
+  </footer>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting
 
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-    <footer>
-        <p>Contact us: +44 7444 506 707 | hjxsigma@gmail.com</p>
-    </footer>
+      // Get the form data
+      const formData = new FormData(form);
+
+      // You can process the form data here (e.g., send it to a server)
+      console.log('Form Data:', Object.fromEntries(formData));
+
+      // Display the success message
+      successMessage.style.display = 'block';
+
+      // Reset the form
+      form.reset();
+    });
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-// Replace these values with your actual database credentials
+// database credentials
 $servername = "localhost";
 $username = "hamzah";
 $password = "hamzah";

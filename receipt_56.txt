@@ -1,0 +1,9 @@
+Payment Receipt
+
+Order ID: 56
+Customer Name: Hamzah Javed
+Email: javedhamzah30@gmail.com
+Phone Number: +447444506707
+Address: 48, Duke of York street, West Yorkshire, wf1 3pd
+Payment Method: Credit_card
+Total Amount: £15.59
